@@ -1,0 +1,30 @@
+django:
+  debug: true
+  allowed_hosts: '[*]'
+  ratelimit: false
+
+databases:
+  default:
+    ENGINE: 'django.db.backends.postgresql'
+    NAME: 'pipelines'
+    USER: 'test_user'
+    PASSWORD: 'test_user_password'
+    HOST: 'localhost'
+    PORT: '5432'
+
+celery:
+  synchronous: true
+
+secrets:
+  secret_key: '*/super-mega-test-key*/'
+
+conekta:
+  private_key: 'key_w2zYDcwrGzyszHjAzNCVvA'
+  version: '2.0.0'
+
+slack_notifications:
+  public_channel: false
+  private_channel: false
+
+sentry:
+  dsn: false
