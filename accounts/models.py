@@ -24,13 +24,12 @@ class Account(models.Model):
         _('Is fraud'),
         default = False,
         db_index = True,
-        populate_from = get_username
     )
 
     slug = AutoSlugField(
-        unique_with = 'company__name',
-        editable = False,
-        populate_from = get_username
+       unique_with='company__name',
+        editable=False,
+        populate_from=get_username
     )
 
     company = models.ForeignKey('companies.Company',

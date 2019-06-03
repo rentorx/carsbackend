@@ -1,4 +1,6 @@
 from django.db import models
+from commons.models import TimeStampedModel
+from django.utils.translation import gettext_lazy as _
 from autoslug import AutoSlugField
 
 
@@ -22,7 +24,7 @@ class Company(TimeStampedModel):
 
     class Meta:
         verbose_name = _('Company'),
-        vorbose_name_plural = _('Companies')
+        verbose_name_plural = _('Companies')
 
     def __str__(self):
         return f"{self.name}"
