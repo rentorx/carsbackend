@@ -34,7 +34,7 @@ CUSTOM_CONFIG = {
 
 def load_config():
     with open('config/config.yml') as yaml_file:
-        user_conf = yaml.load(yaml_file.read())
+        user_conf = yaml.load(yaml_file.read(), Loader=yaml.FullLoader)
     conf = {}
     conf.update(CUSTOM_CONFIG)
     for section in user_conf:

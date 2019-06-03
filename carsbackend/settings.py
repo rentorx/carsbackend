@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from config.config import load_config
+
+config = load_config()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wq#1caogyiro^s2x*x=1hmt3fi*r_l7@z7=058w8h6p6v26s+f'
+SECRET_KEY = config['secrets'].get('secret_key', False)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config['django'].get('debug', False)
 
-ALLOWED_HOSTS = '[*]'
+ALLOWED_HOSTS = config['django'].get('allowed_hosts', [])
 
 
 # Application definition
@@ -37,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #Project Specific.
+    'accounts.apps.AccountsConfig',
+    'companies.apps.CompaniesConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -72,13 +80,8 @@ WSGI_APPLICATION = 'carsbackend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+DATABASES = config.get('databases', False)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation

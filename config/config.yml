@@ -8,7 +8,7 @@ databases:
     ENGINE: 'django.db.backends.postgresql'
     NAME: 'mydb'
     USER: 'mydbuser'
-    PASSWORD: 'mypass'
+    PASSWORD: 'mydbpass'
     HOST: 'localhost'
     PORT: '5432'
 
