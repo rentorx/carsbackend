@@ -18,7 +18,7 @@ class Company(TimeStampedModel):
     admins = models.ManyToManyField(
         'accounts.Account',
         related_name='companies',
-        blank=True        
+        blank=True
     )
 
     class Meta:
