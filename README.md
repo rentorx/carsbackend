@@ -7,22 +7,22 @@
 * Postgres >=11.1.0
 * Redis >=5.0.3
 
-Create a user e.g `createuser xvpn`  and new data base e.g `createdb xvpn_db`.
+Create a user e.g `createuser mydbuser`  and new data base e.g `createdb mydb`.
 Here is a nice [reference](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) for set the DB.
 
 ### Virtual ENV ###
 
 * Install virtual env `pip install virtualenv virtualenvwrapper` please read virtalenvwrapper documentation to fully setup virtual env wrapper.
 
-* Create a virtual environment `mkvirtualenv xvpn --python=$(which python3.7)`
+* Create a virtual environment `mkvirtualenv carservice --python=$(which python3.7)`
 
 * By default the virtual env should be active, for now on when you need to activate the virtual env run `workon xvpn`.
 
 ### Repo ###
 
-* Clone the repo `git clone git@bitbucket.org:xminerva/vpnbackend.git`.
+* Clone the repo `git@github.com:rentorx/carsbackend.git`.
 
-* Move to project `cd vpnbackend`.
+* Move to project `cd carsbackend`.
 
 We use the *github flow* and branch model for development, meaning that we have 3 main branches, `develop`, `staging`, `master` and two branches folders `feature/` and `hotfix/`.
 
