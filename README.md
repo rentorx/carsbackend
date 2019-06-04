@@ -1,6 +1,4 @@
-# carsbackend
-# XMinerva VPN Project #
-
+# Carsbackend
 
 ### System requirements ###
 
