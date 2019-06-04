@@ -40,4 +40,4 @@ class Account(models.Model):
         verbose_name_plural = _('Accounts')
 
     def __str__(self):
-        return f'{self.slug}'
+        return f"{self.slug}"
