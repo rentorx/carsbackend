@@ -12,6 +12,11 @@ databases:
     HOST: '127.0.0.1'
     PORT: '5432'
 
+    # sudo -u postgres psql
+    # create database mydb;
+    # create user mydbuser with encrypted password 'mydbpass';
+    # grant all privileges on database mydb to mydbuser;
+
 celery:
   synchronous: false
 

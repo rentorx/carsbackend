@@ -6,7 +6,6 @@ import logging
 
 
 # Create your models here.
-
 logger = logging.getLogger(__name__)
 
 
@@ -22,18 +21,18 @@ class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_fraud = models.BooleanField(
         _('Is fraud'),
-        default = False,
-        db_index = True,
+        default=False,
+        db_index=True,
     )
-
     slug = AutoSlugField(
-       unique_with='company__name',
+        unique_with='company__name',
         editable=False,
         populate_from=get_username
     )
-
-    company = models.ForeignKey('companies.Company',
-        on_delete = models.CASCADE
+    company = models.ForeignKey(
+        'companies.Company',
+        on_delete=models.CASCADE,
+        default=None
     )
 
     class Meta:
@@ -42,4 +41,3 @@ class Account(models.Model):
 
     def __str__(self):
         return f'{self.slug}'
-

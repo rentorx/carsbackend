@@ -11,13 +11,12 @@ class TimeStampedModel(models.Model):
 
     created_at = models.DateTimeField(
         _('Created At'),
-        auto_now_add = True
+        auto_now_add=True
     )
     last_modified_at = models.DateTimeField(
         _('Last modified at'),
-        auto_now = True
+        auto_now=True
     )
 
     class Meta:
         abstract = True
-
