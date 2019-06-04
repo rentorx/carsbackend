@@ -1,0 +1,35 @@
+django:
+  debug: true
+  allowed_hosts: '[*]'
+  ratelimit: false
+
+databases:
+  default:
+    ENGINE: 'django.db.backends.postgresql'
+    NAME: 'mydb'
+    USER: 'mydbuser'
+    PASSWORD: 'mypass'
+    HOST: '127.0.0.1'
+    PORT: '5432'
+
+    # sudo -u postgres psql
+    # create database mydb;
+    # create user mydbuser with encrypted password 'mydbpass';
+    # grant all privileges on database mydb to mydbuser;
+
+celery:
+  synchronous: false
+
+secrets:
+  secret_key: 'set-me-plz'
+
+conekta:
+  private_key: 'private_key_from_conekta_account'
+  version: '2.0.0'
+
+slack_notifications:
+  public_channel: false
+  private_channel: false
+
+sentry:
+  dsn: false
