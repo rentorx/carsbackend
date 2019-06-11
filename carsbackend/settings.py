@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #Project Specific.
     'accounts.apps.AccountsConfig',
     'companies.apps.CompaniesConfig',
+    'api.apps.ApiConfig',
 
 ]
 

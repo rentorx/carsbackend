@@ -20,13 +20,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Api urls
-    path('api/', include('accounts.urls')),
-    path('api/', include(('companies.urls', 'app_name'))),
+    path('api/v1/', include('api.urls')),
 
     #rest framework
     path('api-auth/', include(
         'rest_framework.urls',
         namespace='rest_framework'
         )
-    ),
+     ),
 ]
