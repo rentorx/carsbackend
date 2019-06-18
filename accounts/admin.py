@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Account, User
+from django.contrib.auth.models import User
+from .models import Account
 
 
 # Define an inline admin descriptor for Account model
@@ -14,10 +15,10 @@ class AccountInline(admin.StackedInline):
 # Define a new User admin
 class CustomUserAdmin(UserAdmin):
     inlines = (AccountInline,)
-    list_display = ['username', 'last_login', 'date_joined', 'is_company']
+    list_display = ['username', 'last_login', 'date_joined' ]
     search_fields = ['email', 'username']
 
 
 # Re-register UserAdmin
-#admin.site.unregister(User)
+admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)

@@ -4,4 +4,20 @@ from django.contrib import admin
 from .models import Vehicle
 
 
-admin.site.register(Vehicle)
+#admin.site.register(Vehicle)
+
+@admin.register(Vehicle)
+class CustomerAdmin(admin.ModelAdmin):
+
+    list_display = ['id', 'plates', 'type', 'model', 'account']
+
+    # define search box
+    search_fields = ['plates', 'brand']
+
+    # define filter columns
+    list_filter = ['brand']
+
+    # define which field will be pre populated.
+    #prepopulated_fields = {'dept_name': ('dept_name',)}
+    # define model data list ordering.
+    ordering = ('id','plates')
