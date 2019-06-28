@@ -32,7 +32,7 @@ class Company(TimeStampedModel):
         _('country'),
         max_length=12,
         default="mx",
-        null=True,
+
         help_text="country",
     )
     phone = models.CharField(_('phone'), max_length=128)
@@ -42,11 +42,12 @@ class Company(TimeStampedModel):
         unique=True,
         editable=False
     )
-    admins = models.ForeignKey(
+    admin = models.ForeignKey(
         'accounts.Account',
-        related_name='admins',
         on_delete=models.CASCADE,
-        default=None
+        related_name='companies',
+        help_text=_('Account administrator for this company'),
+        default=None,
     )
 
     class Meta:
@@ -54,4 +55,4 @@ class Company(TimeStampedModel):
         verbose_name_plural = _('companies')
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.address}"

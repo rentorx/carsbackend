@@ -36,26 +36,19 @@ class Account(TimeStampedModel):
         editable=False,
         populate_from=get_username
     )
-    company = models.ForeignKey(
+    company = models.ManyToManyField(
         'companies.Company',
-        on_delete=models.CASCADE,
-        blank=True,
-        default=None,
-        null=True,
-    )
-    vehicle = models.ForeignKey(
-        'vehicles.Vehicle',
-        on_delete=models.CASCADE,
-        related_name='vehicles',
+        help_text=_('Companies related to this account'),
+        related_name='accounts',
         default=None,
         blank=True,
-        null=True,
     )
+
 
     class Meta:
         verbose_name = _('Account')
         verbose_name_plural = _('Accounts')
-        unique_together = (("user"), ("vehicle"))
+        #unique_together = (("user"), ("vehicles"))
 
     def __str__(self):
         return f"{self.slug}"

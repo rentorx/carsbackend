@@ -9,7 +9,8 @@ from .models import Vehicle
 @admin.register(Vehicle)
 class CustomerAdmin(admin.ModelAdmin):
 
-    list_display = ['id', 'plates', 'type', 'model', 'account']
+    list_display = ['id', 'plates', 'type', 'model']
+    # list_display = ['id', 'plates', 'type', 'model', 'account']
 
     # define search box
     search_fields = ['plates', 'brand']

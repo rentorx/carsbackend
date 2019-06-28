@@ -15,7 +15,7 @@ class AccountInline(admin.StackedInline):
 # Define a new User admin
 class CustomUserAdmin(UserAdmin):
     inlines = (AccountInline,)
-    list_display = ['username', 'last_login', 'date_joined' ]
+    list_display = ['username', 'last_login', 'date_joined']
     search_fields = ['email', 'username']
 
 

@@ -9,9 +9,6 @@ import datetime
 logger = logging.getLogger(__name__)
 
 
-# Create your models here.
-
-
 class Vehicle(TimeStampedModel):
     """
     labeled Vehicles
@@ -51,14 +48,13 @@ class Vehicle(TimeStampedModel):
         'accounts.Account',
         on_delete=models.CASCADE,
         help_text=_('Where this vehicle belongs to'),
-        related_name='accounts',
-        default=None
+        default=None,
     )
 
     class Meta:
         verbose_name = _('vehicle'),
         verbose_name_plural = _('vehicles')
-        unique_together = (("plates", "account"),)
+        # unique_together = (("plates", "account"),)
 
     def __str__(self):
         return f"{self.plates}"

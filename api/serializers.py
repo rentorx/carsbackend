@@ -8,15 +8,13 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Company
-        fields = '__all__' 
+        fields = '__all__'
 
 
 #class AccountSerializer(serializers.HyperlinkedModelSerializer):
 class AccountSerializer(serializers.ModelSerializer):
 
-#    company = serializers.PrimaryKeyRelatedField(many=True, queryset=Company.objects.all())
+#company = serializers.PrimaryKeyRelatedField(many=True, queryset=Company.objects.all())
     class Meta:
         model = Account
-        fields = '__all__' 
-
-
+        fields = '__all__'
