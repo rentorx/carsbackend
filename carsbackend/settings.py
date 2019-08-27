@@ -40,11 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    #Third Party
+    # Third Party
     'rest_framework',
-
-    #Project Specific.
+    # Project Specific.
     'accounts.apps.AccountsConfig',
     'companies.apps.CompaniesConfig',
     'vehicles.apps.VehiclesConfig',
@@ -88,7 +86,6 @@ WSGI_APPLICATION = 'carsbackend.wsgi.application'
 DATABASES = config.get('databases', False)
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -117,12 +114,12 @@ REST_FRAMEWORK = {
 }
 
 
-
-
 # Internationalization
+
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -135,5 +132,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+STATIC_ROOT = '/home/rentorx/shadow/carsbackend/'
 STATIC_URL = '/static/'

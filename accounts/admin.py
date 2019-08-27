@@ -10,12 +10,13 @@ class AccountInline(admin.StackedInline):
     model = Account
     can_delete = False
     verbose_name_plural = 'accounts'
+    fk_name = 'user'
 
 
 # Define a new User admin
 class CustomUserAdmin(UserAdmin):
     inlines = (AccountInline,)
-    list_display = ['username', 'last_login', 'date_joined']
+    list_display = ['id', 'username', 'last_login', 'date_joined', ]
     search_fields = ['email', 'username']
 
 

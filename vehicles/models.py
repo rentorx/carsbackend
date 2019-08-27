@@ -22,7 +22,6 @@ class Vehicle(TimeStampedModel):
         ('tesla', _("Tesla")),
         ('nissan', _("Nissan")),
     )
-
     plates = models.CharField(
         _('plates'),
         max_length=32
@@ -43,18 +42,17 @@ class Vehicle(TimeStampedModel):
         default=datetime.datetime.now().year,
         help_text="Model year format: <YYYY>"
     )
-
     account = models.ForeignKey(
         'accounts.Account',
         on_delete=models.CASCADE,
-        help_text=_('Where this vehicle belongs to'),
+        help_text=_('Account owner for this vehicle'),
         default=None,
     )
 
     class Meta:
         verbose_name = _('vehicle'),
         verbose_name_plural = _('vehicles')
-        # unique_together = (("plates", "account"),)
+        unique_together = (("plates", "account"),)
 
     def __str__(self):
         return f"{self.plates}"

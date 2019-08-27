@@ -32,27 +32,26 @@ class Company(TimeStampedModel):
         _('country'),
         max_length=12,
         default="mx",
-
         help_text="country",
     )
     phone = models.CharField(_('phone'), max_length=128)
 #    phone = PhoneNumberField(_('phone'), null=False, blank=False, unique=True)
-    slug = AutoSlugField(
-        populate_from='name',
-        unique=True,
-        editable=False
-    )
-    admin = models.ForeignKey(
-        'accounts.Account',
-        on_delete=models.CASCADE,
-        related_name='companies',
-        help_text=_('Account administrator for this company'),
-        default=None,
-    )
+    # slug = AutoSlugField(
+    #     populate_from='name',
+    #     unique=True,
+    #     editable=False
+    # )
+    # admin = models.ForeignKey(
+    #     'accounts.Account',
+    #     on_delete=models.CASCADE,
+    #     related_name='companies',
+    #     help_text=_('Account administrator for this company'),
+    #     default=None,
+    # )
 
     class Meta:
         verbose_name = _('company'),
         verbose_name_plural = _('companies')
 
     def __str__(self):
-        return f"{self.address}"
+        return f"{self.name}"
