@@ -4,10 +4,8 @@ from django.contrib import admin
 from .models import Vehicle
 
 
-#admin.site.register(Vehicle)
-
 @admin.register(Vehicle)
-class CustomerAdmin(admin.ModelAdmin):
+class VehicleAdmin(admin.ModelAdmin):
 
     list_display = ['id', 'plates', 'type', 'model']
     # list_display = ['id', 'plates', 'type', 'model', 'account']

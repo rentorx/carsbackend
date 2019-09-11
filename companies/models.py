@@ -13,26 +13,28 @@ class Company(TimeStampedModel):
     name = models.CharField(
         _('name'),
         max_length=128,
-        help_text="Compani's name",
+        help_text=_("Company"),
+        #verbose_name=_("name"),
     )
     address = models.CharField(
-        _('address'),
+        #_('address'),
         default=None,
         max_length=128,
-        help_text="physical address",
+        help_text=_("Physical address"),
+        verbose_name=_("address"),
     )
     state = models.CharField(
         _('state'),
         max_length=128,
         default=None,
         null=True,
-        help_text="State",
+        help_text=_("State"),
     )
     country = models.CharField(
         _('country'),
         max_length=12,
         default="mx",
-        help_text="country",
+        help_text=_("Country"),
     )
     phone = models.CharField(_('phone'), max_length=128)
 #    phone = PhoneNumberField(_('phone'), null=False, blank=False, unique=True)
@@ -50,8 +52,8 @@ class Company(TimeStampedModel):
     # )
 
     class Meta:
-        verbose_name = _('company'),
-        verbose_name_plural = _('companies')
+        verbose_name = _('Company'),
+        verbose_name_plural = _('Companies')
 
     def __str__(self):
         return f"{self.name}"

@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-29 05:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: accounts/apps.py:7 accounts/models.py:50
+msgid "Accounts"
+msgstr ""
+
+#: accounts/models.py:21
+msgid "email address"
+msgstr ""
+
+#: accounts/models.py:24
+msgid "Is fraud"
+msgstr ""
+
+#: accounts/models.py:27
+msgid "Marks if the user is trying to cheat the system."
+msgstr ""
+
+#: accounts/models.py:30
+msgid "Is owner"
+msgstr ""
+
+#: accounts/models.py:33
+msgid "Marks if the user is owner is a service provider."
+msgstr ""
+
+#: accounts/models.py:37
+msgid "Companies related to this account"
+msgstr ""
+
+#: accounts/models.py:49
+msgid "Account"
+msgstr ""
+
+#: carsbackend/settings.py:134
+msgid "English"
+msgstr ""
+
+#: carsbackend/settings.py:135
+msgid "Mexican Language"
+msgstr ""
+
+#: carsbackend/urls.py:21 carsbackend/urls.py:23
+msgid "Cars Services Management"
+msgstr ""
+
+#: carsbackend/urls.py:22
+msgid "Cars Services Administration Site"
+msgstr ""
+
+#: commons/models.py:13
+msgid "Created At"
+msgstr ""
+
+#: commons/models.py:17
+msgid "Last modified at"
+msgstr ""
+
+#: companies/apps.py:7 companies/models.py:56
+msgid "Companies"
+msgstr ""
+
+#: companies/models.py:14 services/models.py:23 services/models.py:40
+msgid "name"
+msgstr ""
+
+#: companies/models.py:16 companies/models.py:55
+msgid "Company"
+msgstr ""
+
+#: companies/models.py:23
+msgid "Physical address"
+msgstr ""
+
+#: companies/models.py:24
+msgid "address"
+msgstr ""
+
+#: companies/models.py:27
+msgid "state"
+msgstr ""
+
+#: companies/models.py:31
+msgid "State"
+msgstr ""
+
+#: companies/models.py:34
+msgid "country"
+msgstr ""
+
+#: companies/models.py:37
+msgid "Country"
+msgstr ""
+
+#: companies/models.py:39
+msgid "phone"
+msgstr ""
+
+#: services/apps.py:7
+msgid "Services"
+msgstr ""
+
+#: services/models.py:14
+msgid "Engine System"
+msgstr ""
+
+#: services/models.py:15
+msgid "Suspension System"
+msgstr ""
+
+#: services/models.py:16
+msgid "Transmission System"
+msgstr ""
+
+#: services/models.py:17
+msgid "Steering System"
+msgstr ""
+
+#: services/models.py:18
+msgid "Electric System"
+msgstr ""
+
+#: services/models.py:19
+msgid "Brakes system"
+msgstr ""
+
+#: services/models.py:20
+msgid "Car Body"
+msgstr ""
+
+#: services/models.py:28
+msgid "description"
+msgstr ""
+
+#: vehicles/apps.py:7
+msgid "Vehicles"
+msgstr ""
+
+#: vehicles/models.py:17
+msgid "Honda"
+msgstr ""
+
+#: vehicles/models.py:18
+msgid "BMW"
+msgstr ""
+
+#: vehicles/models.py:19
+msgid "kia"
+msgstr ""
+
+#: vehicles/models.py:20
+msgid "Mazda"
+msgstr ""
+
+#: vehicles/models.py:21
+msgid "Volkswagen"
+msgstr ""
+
+#: vehicles/models.py:22
+msgid "Tesla"
+msgstr ""
+
+#: vehicles/models.py:23
+msgid "Nissan"
+msgstr ""
+
+#: vehicles/models.py:26
+msgid "plates"
+msgstr ""
+
+#: vehicles/models.py:30
+msgid "brand"
+msgstr ""
+
+#: vehicles/models.py:35
+msgid "type"
+msgstr ""
+
+#: vehicles/models.py:37
+msgid "model"
+msgstr ""
+
+#: vehicles/models.py:48
+msgid "Account owner for this vehicle"
+msgstr ""
+
+#: vehicles/models.py:53
+msgid "vehicle"
+msgstr ""
+
+#: vehicles/models.py:54
+msgid "vehicles"
+msgstr ""

@@ -6,9 +6,9 @@ django:
 databases:
   default:
     ENGINE: 'django.db.backends.postgresql'
-    NAME: 'mydb'
-    USER: 'mydbuser'
-    PASSWORD: 'mypass'
+    NAME: 'mydb_cars'
+    USER: 'mydbusercars'
+    PASSWORD: 'mydbpass'
     HOST: 'localhost'
     PORT: '5432'
 

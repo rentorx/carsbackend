@@ -13,19 +13,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import path, include
+from django.utils.translation import gettext_lazy as _
 
-urlpatterns = [
+admin.site.index_title = _("Cars Services Management")
+admin.site.site_header = _("Cars Services Administration Site")
+admin.site.site_title = _("Cars Services Management")
+
+
+urlpatterns = i18n_patterns(
+    # ...
     path('admin/', admin.site.urls),
-
     #Api urls
     path('api/v1/', include('api.urls')),
-
     #rest framework
     path('api-auth/', include(
         'rest_framework.urls',
         namespace='rest_framework'
         )
      ),
-]
+    # If no prefix is given, use the default language
+    prefix_default_language=False,
+)

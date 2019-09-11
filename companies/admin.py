@@ -4,5 +4,5 @@ from django.contrib import admin
 from .models import Company
 
 @admin.register(Company)
-class CustomerAdmin(admin.ModelAdmin):
+class CompanyAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'address', 'phone',]
