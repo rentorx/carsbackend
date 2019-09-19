@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from config.config import load_config
+from django.utils.translation import gettext_lazy as _
 
 config = load_config()
 
@@ -40,10 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    #Project Specific.
+    # Third Party
+    'rest_framework',
+    'djmoney',
+
+    # Project Specific.
     'accounts.apps.AccountsConfig',
     'companies.apps.CompaniesConfig',
+    'vehicles.apps.VehiclesConfig',
+    'services.apps.ServicesConfig',
+    'api.apps.ApiConfig',
 
 ]
 
@@ -55,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'carsbackend.urls'
@@ -83,7 +91,6 @@ WSGI_APPLICATION = 'carsbackend.wsgi.application'
 DATABASES = config.get('databases', False)
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -103,21 +110,34 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+REST_FRAMEWORK = {
+                  # Use Django's standard `django.contrib.auth` permissions,   
+                  # or allow read-only access for unauthenticated users.   
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+
 # Internationalization
+
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
+#LANGUAGE_CODE = 'es-es'
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LANGUAGES = [
+    ('en', _('English')),
+    ('es-es', _('Mexican Language')),
+]
+
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+STATIC_ROOT = '/home/rentorx/shadow/carsbackend/'
 STATIC_URL = '/static/'
