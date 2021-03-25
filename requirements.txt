@@ -2,4 +2,4 @@ Django==2.1.7
 django-autoslug-iplweb==1.9.4
 psycopg2-binary==2.7.7
 pytz==2018.9
-PyYAML==5.1
+PyYAML==5.4
